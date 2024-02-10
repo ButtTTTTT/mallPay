@@ -1,0 +1,119 @@
+spring:
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driverClassName: com.mysql.cj.jdbc.Driver
+    druid:
+      # 主库数据源
+      master:
+        url: jdbc:mysql://localhost:3306/mall?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
+        username: root
+        password: CcL4liDag8FwLY3f7QlIdTMeWRbbQKAeWfMq/Sxd19F92uHtG0hMjaxPUFRgaYI91NvBHKJcdHm2fhWXJ+jWLQ==
+        connect-properties:
+          config.decrypt: true
+          config.decrypt.key: MFwwDQYJKoZIhvcNAQEBBQADSwAwSAJBAKq3401BVXKhhN/KO+gmBezLBuzvREc2E42WaOb8+qke/L28f3aVvM9qJT0SZIrvUX0nHiEOGiQ06ZFDQ6vnUzMCAwEAAQ==
+      # 从库数据源
+      slave:
+        # 从数据源开关/默认关闭
+        enabled: false
+        url:
+        username:
+        password:
+      # 初始连接数
+      initialSize: 5
+      # 最小连接池数量
+      minIdle: 10
+      # 最大连接池数量
+      maxActive: 20
+      # 配置获取连接等待超时的时间
+      maxWait: 60000
+      # 配置连接超时时间
+      connectTimeout: 30000
+      # 配置网络超时时间
+      socketTimeout: 60000
+      # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+      # 配置一个连接在池中最小生存的时间，单位是毫秒
+      minEvictableIdleTimeMillis: 300000
+      # 配置一个连接在池中最大生存的时间，单位是毫秒
+      maxEvictableIdleTimeMillis: 900000
+      # 配置检测连接是否有效
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      webStatFilter:
+        enabled: true
+      statViewServlet:
+        enabled: true
+        # 设置白名单，不填则允许所有访问
+        allow:
+        url-pattern: /druid/*
+        # 控制台管理用户名和密码
+        login-username: root
+        login-password: root
+      filter:
+        config:
+          #是否配置数据库密码加密
+          enabled: true
+        stat:
+          enabled: true
+          # 慢SQL记录
+          log-slow-sql: true
+          slow-sql-millis: 1000
+          merge-sql: true
+        wall:
+          config:
+            multi-statement-allow: true
+  redis:
+    # 地址
+    host: 127.0.0.1
+    # 端口，123.249.1.208默认为6379
+    port: 6379
+    # 数据库索引
+    database: 9
+    # 密码UnKnnow@lhit.top419179
+    password:
+    # 连接超时时间
+    timeout: 5s
+    lettuce:
+      pool:
+        # 连接池中的最小空闲连接
+        min-idle: 0
+        # 连接池中的最大空闲连接
+        max-idle: 8
+        # 连接池的最大数据库连接数
+        max-active: 8
+        # #连接池最大阻塞等待时间（使用负值表示没有限制）
+        max-wait: -1ms
+  rabbitmq:
+    addresses: 192.168.137.103
+    port: 5672
+    username: unknn
+    password: UnKnnow@lhit.top419179
+server:
+  servlet:
+    session:
+      timeout: 120
+  port: 8088
+mybatis:
+  type-aliases-package: top.lhit.mall.module.pojo
+  mapper-locations: classpath:mappers/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    # 控制台日志配置
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+logging:
+  pattern:
+    console: "[%thread] %-5level %logger{36} - %msg%n"
+  configuration:
+  log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  map-underscore-to-camel-case: true
+  global-config:
+  # mp banner
+  banner: off
+  db-config:
+  table-underline: true

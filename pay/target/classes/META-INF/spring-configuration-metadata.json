@@ -1,0 +1,67 @@
+{
+  "groups": [
+    {
+      "name": "alipay",
+      "type": "top.lhit.pay.config.AlipayAccountConfig",
+      "sourceType": "top.lhit.pay.config.AlipayAccountConfig"
+    },
+    {
+      "name": "wx",
+      "type": "top.lhit.pay.config.WxAccountConfig",
+      "sourceType": "top.lhit.pay.config.WxAccountConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "alipay.app-id",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.AlipayAccountConfig"
+    },
+    {
+      "name": "alipay.notify-url",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.AlipayAccountConfig"
+    },
+    {
+      "name": "alipay.private-key",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.AlipayAccountConfig"
+    },
+    {
+      "name": "alipay.public-key",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.AlipayAccountConfig"
+    },
+    {
+      "name": "alipay.return-url",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.AlipayAccountConfig"
+    },
+    {
+      "name": "wx.app-id",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.WxAccountConfig"
+    },
+    {
+      "name": "wx.mch-id",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.WxAccountConfig"
+    },
+    {
+      "name": "wx.mch-key",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.WxAccountConfig"
+    },
+    {
+      "name": "wx.notify-url",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.WxAccountConfig"
+    },
+    {
+      "name": "wx.return-url",
+      "type": "java.lang.String",
+      "sourceType": "top.lhit.pay.config.WxAccountConfig"
+    }
+  ],
+  "hints": []
+}
